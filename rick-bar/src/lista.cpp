@@ -24,6 +24,7 @@ bool Lista::existe(int elemento){
 	atual = this->primeiro;
 	while(atual != NULL){
 		if(atual->chave == elemento){
+			atual = NULL;
 			return 1;
 		}
 		atual = atual->proximo;
@@ -33,8 +34,6 @@ bool Lista::existe(int elemento){
 }
 
 
-//alguns algoritmos para operações básicas das listas foram retirados do site codementor.io
-//com algumas modificações para as especificidades do TP
 void Lista::Inserir(int elemento,int operations){
 	if(this->existe(elemento) == 0) {
 		celula *temp = new celula;
@@ -47,10 +46,13 @@ void Lista::Inserir(int elemento,int operations){
 			this->ultimo = temp;
 			this->primeiro->proximo = NULL;
 			temp = NULL;
+			delete temp;
 		}
 		else{
 			this->ultimo->proximo = temp;
 			this->ultimo = temp;
+			temp = NULL;
+			delete temp;
 		}
 	}
 }
@@ -113,7 +115,6 @@ void Lista::LimparLista(){
 }
 
 void Lista::CopiaLista(Lista *exemplo){
-	//remover todos q tiverem operacoes>1 e o proprio elemento
 
 	Lista::LimparLista();
 	celula *auxiliar = new celula();

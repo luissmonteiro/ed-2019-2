@@ -1,6 +1,6 @@
 #include <iostream>
 #include "lista.hpp"
-#include "rick.hpp"
+#include "medicao.hpp"
 
 int main() {
   int q;
