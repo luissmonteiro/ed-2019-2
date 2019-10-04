@@ -11,7 +11,7 @@ int main() {
     if (e == 'i')
       recipientes->Inserir(q,1);
     else if(e == 'r'){
-      recipientes->RemoveInput(q);//pareo aqui
+      recipientes->RemoveInput(q);
     }
     else if(e == 'p'){
       operacoes->LimparLista();
