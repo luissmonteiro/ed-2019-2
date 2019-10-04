@@ -12,7 +12,7 @@ int bar(Lista *recipientes,int volume,Lista *operacoes) {
 		celula *celula2 = new celula();	
 		auxiliar = recipientes->primeiro;
 		int operacaoInicial = 1;
-		//caso de 1 operação apenas ser suficiente
+		//caso de 1 operação apenas ser suficiente na medição
 		for(contador = 1; contador <= NumeroElementos; contador++){
 			if(auxiliar->chave == volume){
 				auxiliar = NULL;
