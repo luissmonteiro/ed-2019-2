@@ -13,33 +13,12 @@ CFLAGS=-Wall -Wextra # compiler flags, troque o que quiser, exceto bibliotecas e
 EXEC=./tp1 # nome do executavel que sera gerado, nao troque
 TMPOUT=tp1.testresult
 
-# === REGRAS =====
-# ================
-# 
-# Aqui declaramos as nossas regras de compilacao.
-# Para chamar uma regra, podemos simplesmente digitar
-# 	make nome_regra
-# Exs.:
-# 	make ./tp1
-# 	make rick.o
-# 	make clean
-# Cada regra de compilacao tem a seguinte sintaxe:
-#
-# NOME_OUTPUT: DEPENDENCIAS
-# 	CMD
-#
-# NOME_OUTPUT eh o nome do arquivo que vai ser gerado (ou qualquer nome caso
-# nenhum arquivo seja gerado, ex. clean)
-# DEPENDENCIAS sao os nomes dos arquivos necessarios para executar essa regra
-# de compilacao
-# CMD sao os comandos necessarios para executar a regra (por exemplo, chamar o
-# gcc)
 
-$(EXEC): src/main.cpp rick.o lista.o
-	$(CC) $(CFLAGS) src/main.cpp rick.o lista.o -o $(EXEC)
+$(EXEC): src/main.cpp medicao.o lista.o
+	$(CC) $(CFLAGS) src/main.cpp medicao.o lista.o -o $(EXEC)
 
-rick.o: src/rick.cpp # esse eh um exemplo, nao utilize esse tipo de nome (rick.cc, rick.h, rick.o) para seus arquivos
-	$(CC) $(CFLAGS) -c src/rick.cpp -o rick.o
+medicao.o: src/medicao.cpp # esse eh um exemplo, nao utilize esse tipo de nome (rick.cc, rick.h, rick.o) para seus arquivos
+	$(CC) $(CFLAGS) -c src/medicao.cpp -o medicao.o
 
 lista.o: src/lista.cpp
 	$(CC) $(CFLAGS) -c src/lista.cpp -o lista.o
@@ -48,7 +27,7 @@ test: $(EXEC)
 	@bash run_tests.sh $(EXEC) $(TMPOUT)
 
 clean: # remove todos os arquivos temporarios que forem gerados pela compilacao
-	rm -rf rick.o lista.o
+	rm -rf medicao.o lista.o
 
 # === OUTROS =====
 # ================
