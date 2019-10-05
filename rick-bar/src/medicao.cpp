@@ -25,7 +25,7 @@ int bar(Lista *recipientes,int volume,Lista *operacoes) {
 		}
 		celula2 = operacoes->primeiro;
 		//resto dos casos
-		while(true){
+		while(1){
 			contador = 1;
 			operacaoInicial++;
 			auxiliar = recipientes->primeiro;
