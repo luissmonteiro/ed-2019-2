@@ -17,7 +17,7 @@ class celula{
 };
 
 	
-class Lista{
+/*class Lista{
 	public:
 		celula *primeiro = NULL;
 		celula *ultimo = NULL;
@@ -36,14 +36,13 @@ class Lista{
 		int searchPos(int n);
 		int searchName(std::string nome);
 		~Lista(){};
-};
+};*/
 
 
 class Vector{
 	public:
 		int tamanho;
 		int totalMeses;
-		int tamanhoVec = 0;
 		celula *celulas[200000];
 		Vector();
 		Vector(int tamanho);
@@ -52,7 +51,7 @@ class Vector{
 		void Insere(int tempo, std::string nome);
 		void Remove(int posicao,celula *item);
 		void Print();
-		void OrdenaChar(int nrPlanetas, int nrCaracteres);
+		void RadixSort(int nrPlanetas, int nrCaracteres);
 		void ContaChar(int totalPlanetas, size_t sizeChar);
 		~Vector(){};
 };
